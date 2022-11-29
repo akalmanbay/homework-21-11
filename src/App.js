@@ -3,45 +3,39 @@ import React from "react";
 import './App.css';
 import Header from './Header';
 import PageComponent from "./PageComponent";
-import { ContentComponent1, ContentComponent2, ContentComponent3 } from './ContentComponent';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import ContentComponent from './ContentComponent';
 
 
 function App() {
-
-
+  let articlesInfo = [
+    {
+      title: 'Title1',
+      description: 'Description1',
+      img: 'Img.png'
+    },
+    {
+      title: 'Title2',
+      description: 'Description2',
+      img: 'Img-5.png'
+    },
+    {
+      title: 'Title3',
+      description: 'Description3',
+      img: 'Img-6.png'
+    }
+  ]
   return (
     <div className="App" id="container1">
       <Header />
-      <ContentComponent1 />
-      <ContentComponent2 />
-      <ContentComponent3 />
-      <Router>
-        <Routes>
-          {/* This route is for home component 
-          with exact path "/", in component props 
-          we passes the imported component*/}
-          <Route exact path="/pagecomponent" component={PageComponent} />
+      {articlesInfo.map((articleInfo) => {
+        return <ContentComponent info={articleInfo} />
+      })}
 
-        </Routes>
-      </Router>
+
+
 
     </div>
   );
 }
-
-// function App() {
-//   return (
-//     <div className="App" id="container1">
-
-//       <h1>HHHH</h1>
-
-//     </div>
-//   );
-// }
 
 export default App;
