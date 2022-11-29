@@ -2,7 +2,7 @@
 import React from "react";
 import './App.css';
 import Header from './Header';
-import PageComponent from "./PageComponent";
+// import PageComponent from "./PageComponent";
 import ContentComponent from './ContentComponent';
 
 
